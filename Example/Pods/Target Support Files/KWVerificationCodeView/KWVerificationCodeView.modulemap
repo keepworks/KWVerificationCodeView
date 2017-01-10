@@ -1,0 +1,6 @@
+framework module KWVerificationCodeView {
+  umbrella header "KWVerificationCodeView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_KWVerificationCodeView_Tests {
+  umbrella header "Pods-KWVerificationCodeView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

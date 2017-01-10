@@ -1,0 +1,16 @@
+PODS:
+  - KWVerificationCodeView (0.1.0)
+
+DEPENDENCIES:
+  - KWVerificationCodeView (from `../`)
+
+EXTERNAL SOURCES:
+  KWVerificationCodeView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KWVerificationCodeView: c644f0212dbc10672541dd4a49b6e98af9ef12b1
+
+PODFILE CHECKSUM: ecafe78a450879a181326f3e1383107e9c9ed3ba
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KWVerificationCodeView_Example' do
+  pod 'KWVerificationCodeView', :path => '../'
+
+  target 'KWVerificationCodeView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
