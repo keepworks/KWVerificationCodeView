@@ -2,8 +2,8 @@
 //  KWVerificationCodeView.swift
 //  Pods
 //
-//  Created by Athul Sai on 11/01/17.
-//  Copyright © 2017 KeepWorks. All rights reserved.
+//  Created by KeepWorks on 11/01/17.
+//  Copyright © 2017 KeepWorks Technologies Pvt Ltd. All rights reserved.
 //
 
 import UIKit
@@ -13,14 +13,22 @@ public protocol KWVerificationCodeDelegate: class {
   func moveToPrevious(_ verificationCodeView: KWVerificationCodeView, oldCode: String)
 }
 
-open class KWVerificationCodeView: UIView {
+
+@IBDesignable open class KWVerificationCodeView: UIView {
   
   // MARK: - Constants
   static let maxCharactersLength = 1
   
+  // MARK: - IBInspectables
+  @IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
+    didSet {
+      underlineView.backgroundColor = self.underlineColor.withAlphaComponent(0.3)
+    }
+  }
+  
   // MARK: - IBOutlets
-  @IBOutlet public var numberTextField: UITextField!
-  @IBOutlet public var underlineView: UIView!
+  @IBOutlet public weak var numberTextField: UITextField!
+  @IBOutlet public weak var underlineView: UIView!
   
   // MARK: - Variables
   weak public var delegate: KWVerificationCodeDelegate?
@@ -45,18 +53,18 @@ open class KWVerificationCodeView: UIView {
   }
   
   // MARK: - Public Methods
-  open func activate() {
+  public func activate() {
     numberTextField.becomeFirstResponder()
     if numberTextField.text?.characters.count == 0 {
       numberTextField.text = " "
     }
   }
   
-  open func deactivate() {
+  public func deactivate() {
     numberTextField.resignFirstResponder()
   }
   
-  open func reset() {
+  public func reset() {
     numberTextField.text = " "
     updateUnderline()
   }
@@ -69,7 +77,7 @@ open class KWVerificationCodeView: UIView {
   }
   
   fileprivate func updateUnderline() {
-    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? UIColor.darkGray : UIColor.darkGray.withAlphaComponent(0.3)
+    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? self.underlineColor : self.underlineColor.withAlphaComponent(0.3)
   }
 }
 

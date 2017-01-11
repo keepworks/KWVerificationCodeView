@@ -215,12 +215,10 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = MJQV7AA4JY;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = MJQV7AA4JY;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -499,7 +497,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MJQV7AA4JY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KWVerificationCodeView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -517,7 +515,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MJQV7AA4JY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KWVerificationCodeView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,7 +531,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 423112B5C6F551741EC3F015 /* Pods-KWVerificationCodeView_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = MJQV7AA4JY;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -551,7 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F723ADDC751FC9CC3C9BE34 /* Pods-KWVerificationCodeView_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = MJQV7AA4JY;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

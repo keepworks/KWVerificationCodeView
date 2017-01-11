@@ -2,8 +2,8 @@
 //  VerificationCodeViewController.swift
 //  KWVerificationCodeView
 //
-//  Created by Athul Sai on 01/10/2017.
-//  Copyright (c) 2017 Keep Works. All rights reserved.
+//  Created by KeepWorks on 01/10/2017.
+//  Copyright (c) 2017 KeepWorks Technologies Pvt Ltd. All rights reserved.
 //
 
 import UIKit
