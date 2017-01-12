@@ -5,7 +5,5 @@ target 'KWVerificationCodeView_Example' do
 
   target 'KWVerificationCodeView_Tests' do
     inherit! :search_paths
-
-    
   end
 end

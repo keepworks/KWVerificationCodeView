@@ -1,9 +1,9 @@
 {
   "name": "KWVerificationCodeView",
   "version": "0.1.0",
-  "summary": "A short description of KWVerificationCodeView.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/KWVerificationCodeView",
+  "summary": "A subclass on UIView that displays a verification code field.",
+  "description": "This CocoaPod provides the ability to use a UIView that can display a verification field.",
+  "homepage": "https://bitbucket.org/keepworks/kwverificationcodeview",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "Athul Sai": "athul@keepworks.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/KWVerificationCodeView.git",
+    "git": "https://bitbucket.org/keepworks/kwverificationcodeview.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "KWVerificationCodeView/Classes/**/*"
+  "source_files": "KWVerificationCodeView/Classes/**/*",
+  "resource_bundles": {
+    "KWVerificationCodeView": [
+      "Pod/**/*.xib"
+    ]
+  }
 }

@@ -22,7 +22,7 @@ pod "KWVerificationCodeView"
 
 ## Author
 
-Athul Sai, athul@keepworks.com
+KeepWorks, ios@keepworks.com
 
 ## License
 
