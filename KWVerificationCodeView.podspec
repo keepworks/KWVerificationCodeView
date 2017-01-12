@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description      = 'This CocoaPod provides the ability to use a UIView that can display a verification field.'
   s.homepage         = 'https://bitbucket.org/keepworks/kwverificationcodeview'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Keep Works' => 'ios@keepworks.com' }
+  s.author           = { 'KeepWorks' => 'ios@keepworks.com' }
   s.source           = { :git => 'https://bitbucket.org/keepworks/kwverificationcodeview.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
