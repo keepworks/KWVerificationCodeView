@@ -13,7 +13,6 @@ public protocol KWVerificationCodeDelegate: class {
   func moveToPrevious(_ verificationCodeView: KWVerificationCodeView, oldCode: String)
 }
 
-
 @IBDesignable open class KWVerificationCodeView: UIView {
   
   // MARK: - Constants
@@ -84,19 +83,19 @@ public protocol KWVerificationCodeDelegate: class {
 // MARK: - UITextFieldDelegate
 extension KWVerificationCodeView: UITextFieldDelegate {
   public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    let currentString: NSString = numberTextField.text! as NSString
-    let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+    let currentString = numberTextField.text!
+    let newString = currentString.replacingCharacters(in: textField.text!.range(from: range)!, with: string)
     
-    if newString.length > type(of: self).maxCharactersLength {
+    if newString.characters.count > type(of: self).maxCharactersLength {
       delegate?.moveToNext(self)
       textField.text = string
-    } else if newString.length == 0 {
+    } else if newString.characters.count == 0 {
       delegate?.moveToPrevious(self, oldCode: textField.text!)
       numberTextField.text = " "
     }
     
     updateUnderline()
     
-    return newString.length <= type(of: self).maxCharactersLength
+    return newString.characters.count <= type(of: self).maxCharactersLength
   }
 }
