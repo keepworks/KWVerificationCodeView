@@ -21,7 +21,7 @@ class VerificationCodeViewController: UIViewController {
   
   // MARK: - IBAction
   @IBAction func submitButtonTapped(_ sender: UIButton) {
-    if verificationCodeView.validateCode() {
+    if verificationCodeView.hasValidCode() {
       let alertController = UIAlertController(title: "Success", message: "Code is \(verificationCodeView.getVerificationCode())", preferredStyle: .alert)
       let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
       alertController.addAction(okAction)

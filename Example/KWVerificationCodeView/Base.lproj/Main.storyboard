@@ -23,7 +23,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-Ew-GpT" userLabel="verificationCodeView" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
                                 <rect key="frame" x="33" y="273" width="310" height="62"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="SmR-e4-qbu"/>
                                     <constraint firstAttribute="height" constant="62" id="mda-A6-NvC"/>

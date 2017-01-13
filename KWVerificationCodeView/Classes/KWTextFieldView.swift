@@ -21,13 +21,14 @@ protocol KWTextFieldDelegate: class {
   // MARK: - IBInspectables
   @IBInspectable var underlineColor: UIColor = UIColor.darkGray {
     didSet {
-      underlineView.backgroundColor = self.underlineColor.withAlphaComponent(0.3)
+      underlineView.backgroundColor = self.underlineColor
     }
   }
+  @IBInspectable var underlineSelectedColor: UIColor = UIColor.blue
   
   // MARK: - IBOutlets
   @IBOutlet weak var numberTextField: UITextField!
-  @IBOutlet weak var underlineView: UIView!
+  @IBOutlet weak private var underlineView: UIView!
   
   // MARK: - Variables
   weak var delegate: KWTextFieldDelegate?
@@ -76,7 +77,7 @@ protocol KWTextFieldDelegate: class {
   }
   
   fileprivate func updateUnderline() {
-    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? self.underlineColor : self.underlineColor.withAlphaComponent(0.3)
+    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? self.underlineSelectedColor : self.underlineColor
   }
 }
 

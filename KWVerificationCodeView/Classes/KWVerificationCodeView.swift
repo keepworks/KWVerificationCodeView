@@ -8,40 +8,39 @@
 
 import UIKit
 
-//public protocol KWVerificationCodeDelegate: class {
-//  func getVerificationCode() -> String
-//  func validateCode() -> Bool
-//}
-
 @IBDesignable open class KWVerificationCodeView: UIView {
   
   // MARK: - Constants
   static let maxCharactersLength = 1
   
   // MARK: - IBInspectables
-  //@IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
-  //  didSet {
-  //    underlineView.backgroundColor = self.underlineColor.withAlphaComponent(0.3)
-  //  }
-  //}
+  @IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.underlineColor = self.underlineColor
+      }
+    }
+  }
+  @IBInspectable var underlineSelectedColor: UIColor = UIColor.blue {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.underlineSelectedColor = self.underlineSelectedColor
+      }
+    }
+  }
   
   // MARK: - IBOutlets
-  @IBOutlet weak var textFieldView1: KWTextFieldView!
-  @IBOutlet weak var textFieldView2: KWTextFieldView!
-  @IBOutlet weak var textFieldView3: KWTextFieldView!
-  @IBOutlet weak var textFieldView4: KWTextFieldView!
+  @IBOutlet weak private var textFieldView1: KWTextFieldView!
+  @IBOutlet weak private var textFieldView2: KWTextFieldView!
+  @IBOutlet weak private var textFieldView3: KWTextFieldView!
+  @IBOutlet weak private var textFieldView4: KWTextFieldView!
   
   // MARK: - Variables
-  var mobile: String!
-  var selectedVerificationCodeViewIndex = 0
-  
   lazy var textFieldViews: [KWTextFieldView] = {
     [unowned self] in
     
     return [self.textFieldView1, self.textFieldView2, self.textFieldView3, self.textFieldView4]
     }()
-
-  //weak public var delegate: KWVerificationCodeDelegate?
   
   // MARK: - Lifecycle
   override init(frame: CGRect) {
@@ -49,18 +48,12 @@ import UIKit
     
     loadViewFromNib()
   }
-
+  
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
     loadViewFromNib()
     setupVerificationCodeViews()
-    //numberTextField.delegate = self
-    //NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: numberTextField)
-  }
-  
-  deinit {
-    //NotificationCenter.default.removeObserver(self)
   }
   
   // MARK: - Public Methods
@@ -73,7 +66,7 @@ import UIKit
     return verificationCode
   }
   
-  public func validateCode() -> Bool {
+  public func hasValidCode() -> Bool {
     for textFieldView in textFieldViews {
       if Int(textFieldView.numberTextField.text!) == nil {
         return false
@@ -82,7 +75,7 @@ import UIKit
     
     return true
   }
-
+  
   // MARK: - Private Methods
   private func setupVerificationCodeViews() {
     for textFieldView in textFieldViews {
