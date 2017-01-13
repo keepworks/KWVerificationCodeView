@@ -13,11 +13,13 @@
 		3A4587362045FE4DD63703085C860420 /* Pods-KWVerificationCodeView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A889E3C6EF8CFE3F835B14BE12D3551 /* Pods-KWVerificationCodeView_Tests-dummy.m */; };
 		5BEEC57B7404F424C0E4A2CD8384ABE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		6788C4390D57285325B02852B8C9C9A0 /* KWVerificationCodeView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B692C8C8DC0C78F855F4DF6DAC1499 /* KWVerificationCodeView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A01B86521E28EA0700395D00 /* KWTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B86511E28EA0700395D00 /* KWTextFieldView.swift */; };
+		A01B86561E28F31100395D00 /* KWVerificationCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B86551E28F31100395D00 /* KWVerificationCodeView.xib */; };
 		A0C760F81E26414700299153 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C760F71E26414700299153 /* UIViewExtension.swift */; };
 		A0C760FA1E2641AD00299153 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C760F91E2641AD00299153 /* StringExtension.swift */; };
 		B827A8D897FA1383561CDD82A394407C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		B8E8320AFC954FD88B7C16D44612EDCE /* KWVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A4CED7DA8C0F8E933D4E8DB0FCE24 /* KWVerificationCodeView.swift */; };
-		CD128145E02107064E6E1E18875311FD /* KWVerificationCodeView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3D7B3790BD6BA356B536861967036 /* KWVerificationCodeView.xib */; };
+		CD128145E02107064E6E1E18875311FD /* KWTextFieldView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3D7B3790BD6BA356B536861967036 /* KWTextFieldView.xib */; };
 		EC71A549BDE970FAE3A4B3B552137B1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		F47382E6051C3B298C3601C444621351 /* KWVerificationCodeView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C97E0E8F4AD9A87E43E03EC6F16122CD /* KWVerificationCodeView.bundle */; };
 		F8B4EEE90D1365025DCE0126E520A38F /* Pods-KWVerificationCodeView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2303B2DF8B33DDDC0D0A25EAD2E134F0 /* Pods-KWVerificationCodeView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,7 +47,7 @@
 		15252818D83B3CE2DC80D9D2FC8E42EB /* Pods-KWVerificationCodeView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KWVerificationCodeView_Example-resources.sh"; sourceTree = "<group>"; };
 		21F555C03899427008C9FB286747E80D /* KWVerificationCodeView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KWVerificationCodeView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2303B2DF8B33DDDC0D0A25EAD2E134F0 /* Pods-KWVerificationCodeView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KWVerificationCodeView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		2ED3D7B3790BD6BA356B536861967036 /* KWVerificationCodeView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = KWVerificationCodeView.xib; sourceTree = "<group>"; };
+		2ED3D7B3790BD6BA356B536861967036 /* KWTextFieldView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = KWTextFieldView.xib; sourceTree = "<group>"; };
 		3A889E3C6EF8CFE3F835B14BE12D3551 /* Pods-KWVerificationCodeView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KWVerificationCodeView_Tests-dummy.m"; sourceTree = "<group>"; };
 		4B0C7C6793B696F38ABB399FDFB52DB0 /* Pods-KWVerificationCodeView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KWVerificationCodeView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4C8984A62E3778C82ABDEBCE0AAAF301 /* Pods-KWVerificationCodeView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KWVerificationCodeView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9520DCC280B2A044C977D32A111E1266 /* Pods-KWVerificationCodeView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KWVerificationCodeView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9CD9BCF3B6E78801F89018D9B4F9B271 /* Pods-KWVerificationCodeView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KWVerificationCodeView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A01B86511E28EA0700395D00 /* KWTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWTextFieldView.swift; sourceTree = "<group>"; };
+		A01B86551E28F31100395D00 /* KWVerificationCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KWVerificationCodeView.xib; sourceTree = "<group>"; };
 		A0C760F71E26414700299153 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A0C760F91E2641AD00299153 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B5198653B995F158C170A2D85D95425B /* KWVerificationCodeView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KWVerificationCodeView-dummy.m"; sourceTree = "<group>"; };
@@ -208,7 +212,9 @@
 			children = (
 				A0C760F61E26414700299153 /* Extensions */,
 				5B6A4CED7DA8C0F8E933D4E8DB0FCE24 /* KWVerificationCodeView.swift */,
-				2ED3D7B3790BD6BA356B536861967036 /* KWVerificationCodeView.xib */,
+				A01B86511E28EA0700395D00 /* KWTextFieldView.swift */,
+				A01B86551E28F31100395D00 /* KWVerificationCodeView.xib */,
+				2ED3D7B3790BD6BA356B536861967036 /* KWTextFieldView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01B86561E28F31100395D00 /* KWVerificationCodeView.xib in Resources */,
 				F47382E6051C3B298C3601C444621351 /* KWVerificationCodeView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,11 +441,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01B86521E28EA0700395D00 /* KWTextFieldView.swift in Sources */,
 				165C5413CD31BDD9212C12534012E2A9 /* KWVerificationCodeView-dummy.m in Sources */,
 				B8E8320AFC954FD88B7C16D44612EDCE /* KWVerificationCodeView.swift in Sources */,
 				A0C760FA1E2641AD00299153 /* StringExtension.swift in Sources */,
 				A0C760F81E26414700299153 /* UIViewExtension.swift in Sources */,
-				CD128145E02107064E6E1E18875311FD /* KWVerificationCodeView.xib in Sources */,
+				CD128145E02107064E6E1E18875311FD /* KWTextFieldView.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
