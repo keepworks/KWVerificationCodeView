@@ -8,9 +8,8 @@
 
 import UIKit
 
-public protocol KWVerificationCodeDelegate: class {
-  func moveToNext(_ verificationCodeView: KWVerificationCodeView)
-  func moveToPrevious(_ verificationCodeView: KWVerificationCodeView, oldCode: String)
+public protocol KWVerificationCodeViewDelegate: class {
+  func didChangeVerificationCode()
 }
 
 @IBDesignable open class KWVerificationCodeView: UIView {
@@ -21,16 +20,33 @@ public protocol KWVerificationCodeDelegate: class {
   // MARK: - IBInspectables
   @IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
     didSet {
-      underlineView.backgroundColor = self.underlineColor.withAlphaComponent(0.3)
+      for textFieldView in textFieldViews {
+        textFieldView.underlineColor = underlineColor
+      }
+    }
+  }
+  @IBInspectable var underlineSelectedColor: UIColor = UIColor.blue {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.underlineSelectedColor = underlineSelectedColor
+      }
     }
   }
   
   // MARK: - IBOutlets
-  @IBOutlet public weak var numberTextField: UITextField!
-  @IBOutlet public weak var underlineView: UIView!
+  @IBOutlet weak private var textFieldView1: KWTextFieldView!
+  @IBOutlet weak private var textFieldView2: KWTextFieldView!
+  @IBOutlet weak private var textFieldView3: KWTextFieldView!
+  @IBOutlet weak private var textFieldView4: KWTextFieldView!
   
   // MARK: - Variables
-  weak public var delegate: KWVerificationCodeDelegate?
+  lazy var textFieldViews: [KWTextFieldView] = {
+    [unowned self] in
+    
+    return [self.textFieldView1, self.textFieldView2, self.textFieldView3, self.textFieldView4]
+    }()
+  
+  weak public var delegate: KWVerificationCodeViewDelegate?
   
   // MARK: - Lifecycle
   override init(frame: CGRect) {
@@ -38,64 +54,62 @@ public protocol KWVerificationCodeDelegate: class {
     
     loadViewFromNib()
   }
-
+  
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
     loadViewFromNib()
-    numberTextField.delegate = self
-    NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: numberTextField)
-  }
-  
-  deinit {
-    NotificationCenter.default.removeObserver(self)
+    setupVerificationCodeViews()
   }
   
   // MARK: - Public Methods
-  public func activate() {
-    numberTextField.becomeFirstResponder()
-    if numberTextField.text?.characters.count == 0 {
-      numberTextField.text = " "
+  public func getVerificationCode() -> String {
+    var verificationCode = ""
+    for textFieldView in textFieldViews {
+      verificationCode += textFieldView.numberTextField.text!
     }
+    
+    return verificationCode
   }
   
-  public func deactivate() {
-    numberTextField.resignFirstResponder()
-  }
-  
-  public func reset() {
-    numberTextField.text = " "
-    updateUnderline()
-  }
-  
-  // MARK: - FilePrivate Methods
-  dynamic fileprivate func textFieldDidChange(_ notification: Foundation.Notification) {
-    if numberTextField.text?.characters.count == 0 {
-      numberTextField.text = " "
+  public func hasValidCode() -> Bool {
+    for textFieldView in textFieldViews {
+      if Int(textFieldView.numberTextField.text!) == nil {
+        return false
+      }
     }
+    
+    return true
   }
   
-  fileprivate func updateUnderline() {
-    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? self.underlineColor : self.underlineColor.withAlphaComponent(0.3)
+  // MARK: - Private Methods
+  private func setupVerificationCodeViews() {
+    for textFieldView in textFieldViews {
+      textFieldView.delegate = self
+    }
+    
+    textFieldViews.first?.activate()
   }
 }
 
-// MARK: - UITextFieldDelegate
-extension KWVerificationCodeView: UITextFieldDelegate {
-  public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    let currentString = numberTextField.text!
-    let newString = currentString.replacingCharacters(in: textField.text!.range(from: range)!, with: string)
-    
-    if newString.characters.count > type(of: self).maxCharactersLength {
-      delegate?.moveToNext(self)
-      textField.text = string
-    } else if newString.characters.count == 0 {
-      delegate?.moveToPrevious(self, oldCode: textField.text!)
-      numberTextField.text = " "
+// MARK: - KWTextFieldDelegate
+extension KWVerificationCodeView: KWTextFieldDelegate {
+  func moveToNext(_ textFieldView: KWTextFieldView) {
+    let validIndex = textFieldViews.index(of: textFieldView) == textFieldViews.count - 1 ? textFieldViews.index(of: textFieldView)! : textFieldViews.index(of: textFieldView)! + 1
+    textFieldViews[validIndex].activate()
+  }
+  
+  func moveToPrevious(_ textFieldView: KWTextFieldView, oldCode: String) {
+    if textFieldViews.last == textFieldView && oldCode != " " {
+      return
     }
     
-    updateUnderline()
-    
-    return newString.characters.count <= type(of: self).maxCharactersLength
+    let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
+    textFieldViews[validIndex].activate()
+    textFieldViews[validIndex].reset()
+  }
+  
+  func didChangeCharacters() {
+    delegate?.didChangeVerificationCode()
   }
 }

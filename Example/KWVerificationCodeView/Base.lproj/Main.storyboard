@@ -21,102 +21,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-Ew-GpT" userLabel="verificationView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-Ew-GpT" userLabel="verificationCodeView" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
                                 <rect key="frame" x="33" y="273" width="310" height="62"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAW-9I-Grs" userLabel="verificationCodeView1" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
-                                        <rect key="frame" x="40" y="6" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="D70-kv-yjG"/>
-                                            <constraint firstAttribute="width" constant="50" id="Tge-Fu-oIj"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnL-ww-PSX" userLabel="verificationCodeView2" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
-                                        <rect key="frame" x="100" y="6" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Am-VB-b0X" userLabel="verificationCodeView3" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
-                                        <rect key="frame" x="160" y="6" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCB-ix-jVy" userLabel="verificationCodeView4" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
-                                        <rect key="frame" x="220" y="6" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-q0-jPG" userLabel="topView">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="62"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="KnL-ww-PSX" firstAttribute="height" secondItem="pAW-9I-Grs" secondAttribute="height" id="0w5-Iv-0aM"/>
-                                    <constraint firstItem="4Am-VB-b0X" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="top" constant="6" id="467-IS-62H"/>
-                                    <constraint firstItem="4Am-VB-b0X" firstAttribute="leading" secondItem="KnL-ww-PSX" secondAttribute="trailing" constant="10" id="9no-YN-a3g"/>
-                                    <constraint firstItem="KnL-ww-PSX" firstAttribute="leading" secondItem="pAW-9I-Grs" secondAttribute="trailing" constant="10" id="EtW-5V-wRS"/>
-                                    <constraint firstItem="jCB-ix-jVy" firstAttribute="height" secondItem="4Am-VB-b0X" secondAttribute="height" id="H6Z-iL-Gby"/>
-                                    <constraint firstItem="jCB-ix-jVy" firstAttribute="leading" secondItem="4Am-VB-b0X" secondAttribute="trailing" constant="10" id="LUP-1p-GKY"/>
-                                    <constraint firstItem="jCB-ix-jVy" firstAttribute="width" secondItem="4Am-VB-b0X" secondAttribute="width" id="Oo3-Mx-syM"/>
-                                    <constraint firstAttribute="bottom" secondItem="IIA-q0-jPG" secondAttribute="bottom" id="QlT-T1-yte"/>
-                                    <constraint firstItem="4Am-VB-b0X" firstAttribute="height" secondItem="KnL-ww-PSX" secondAttribute="height" id="Sht-Ab-1NM"/>
                                     <constraint firstAttribute="width" constant="310" id="SmR-e4-qbu"/>
-                                    <constraint firstItem="IIA-q0-jPG" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="top" id="TDb-iM-ynn"/>
-                                    <constraint firstItem="KnL-ww-PSX" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="top" constant="6" id="YIt-VA-9pj"/>
-                                    <constraint firstItem="KnL-ww-PSX" firstAttribute="width" secondItem="pAW-9I-Grs" secondAttribute="width" id="af2-o8-CgB"/>
-                                    <constraint firstAttribute="bottom" secondItem="pAW-9I-Grs" secondAttribute="bottom" constant="6" id="cr1-oF-szO"/>
-                                    <constraint firstItem="jCB-ix-jVy" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="top" constant="6" id="dUg-Fd-YPP"/>
                                     <constraint firstAttribute="height" constant="62" id="mda-A6-NvC"/>
-                                    <constraint firstItem="4Am-VB-b0X" firstAttribute="width" secondItem="KnL-ww-PSX" secondAttribute="width" id="qK6-Of-XBI"/>
-                                    <constraint firstItem="pAW-9I-Grs" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="top" constant="6" id="tPY-XH-pWS"/>
-                                    <constraint firstItem="pAW-9I-Grs" firstAttribute="leading" secondItem="ekS-Ew-GpT" secondAttribute="leading" constant="40" id="vJb-5J-83w"/>
-                                    <constraint firstAttribute="trailing" secondItem="IIA-q0-jPG" secondAttribute="trailing" id="w1L-mH-VZy"/>
-                                    <constraint firstItem="IIA-q0-jPG" firstAttribute="leading" secondItem="ekS-Ew-GpT" secondAttribute="leading" id="y1n-FM-Zsl"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underlineSelectedColor">
+                                        <color key="value" red="0.068236636075229451" green="0.44572890228426398" blue="0.12406174271236946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skh-28-8br" userLabel="submitButton">
-                                <rect key="frame" x="162" y="357" width="51" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skh-28-8br" userLabel="submitButton">
+                                <rect key="frame" x="142.5" y="357" width="90" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="AXu-JL-d2L"/>
                                     <constraint firstAttribute="height" constant="40" id="LpI-mz-Z5g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="1" green="0.79129829853778799" blue="0.59988017074977373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="submitButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NY6-ss-5Qf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWVerificationCode Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e0-Am-MUv" userLabel="titleLabel">
-                                <rect key="frame" x="16" y="185" width="343" height="24"/>
+                                <rect key="frame" x="16" y="159" width="343" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-pN-VEP" userLabel="promptLabel">
-                                <rect key="frame" x="148" y="244" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <rect key="frame" x="149" y="233" width="77" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="P6k-pN-VEP" secondAttribute="bottom" constant="8" id="H7u-LC-n82"/>
-                            <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="6e0-Am-MUv" secondAttribute="bottom" constant="64" id="HQQ-Ne-ux5"/>
+                            <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="P6k-pN-VEP" secondAttribute="bottom" constant="22" id="H7u-LC-n82"/>
+                            <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="6e0-Am-MUv" secondAttribute="bottom" constant="90" id="HQQ-Ne-ux5"/>
                             <constraint firstItem="6e0-Am-MUv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="K9Y-GQ-xFr"/>
                             <constraint firstAttribute="trailing" secondItem="6e0-Am-MUv" secondAttribute="trailing" constant="16" id="NnO-Pl-xaO"/>
                             <constraint firstItem="Skh-28-8br" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="bottom" constant="22" id="UAT-si-Rcy"/>
                             <constraint firstItem="Skh-28-8br" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bUo-66-X5C"/>
-                            <constraint firstItem="P6k-pN-VEP" firstAttribute="top" secondItem="6e0-Am-MUv" secondAttribute="bottom" constant="35" id="gvO-6d-BKX"/>
                             <constraint firstItem="P6k-pN-VEP" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="nb6-py-4Yg"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rI6-Fp-Ztx"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" constant="-30" id="vWu-wt-SXh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="verificationCodeView1" destination="pAW-9I-Grs" id="SyF-Zo-vkq"/>
-                        <outlet property="verificationCodeView2" destination="KnL-ww-PSX" id="wzV-6o-vAm"/>
-                        <outlet property="verificationCodeView3" destination="4Am-VB-b0X" id="oU5-8m-0yx"/>
-                        <outlet property="verificationCodeView4" destination="jCB-ix-jVy" id="iVf-3u-DNn"/>
+                        <outlet property="submitButton" destination="Skh-28-8br" id="c7l-qQ-HLf"/>
+                        <outlet property="verificationCodeView" destination="ekS-Ew-GpT" id="AtV-hT-QUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
