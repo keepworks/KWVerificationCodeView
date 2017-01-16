@@ -11,6 +11,7 @@ import UIKit
 protocol KWTextFieldDelegate: class {
   func moveToNext(_ textFieldView: KWTextFieldView)
   func moveToPrevious(_ textFieldView: KWTextFieldView, oldCode: String)
+  func didEndEditing()
 }
 
 @IBDesignable class KWTextFieldView: UIView {
@@ -95,6 +96,7 @@ extension KWTextFieldView: UITextFieldDelegate {
       numberTextField.text = " "
     }
     
+    delegate?.didEndEditing()
     updateUnderline()
     
     return newString.characters.count <= type(of: self).maxCharactersLength

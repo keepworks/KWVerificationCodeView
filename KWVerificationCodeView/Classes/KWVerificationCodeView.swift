@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol KWVerificationCodeViewDelegate: class {
+  func didChangeVerificationCode()
+}
+
 @IBDesignable open class KWVerificationCodeView: UIView {
   
   // MARK: - Constants
@@ -41,6 +45,8 @@ import UIKit
     
     return [self.textFieldView1, self.textFieldView2, self.textFieldView3, self.textFieldView4]
     }()
+  
+  weak public var delegate: KWVerificationCodeViewDelegate?
   
   // MARK: - Lifecycle
   override init(frame: CGRect) {
@@ -101,5 +107,9 @@ extension KWVerificationCodeView: KWTextFieldDelegate {
     let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
     textFieldViews[validIndex].activate()
     textFieldViews[validIndex].reset()
+  }
+  
+  func didEndEditing() {
+    delegate?.didChangeVerificationCode()
   }
 }

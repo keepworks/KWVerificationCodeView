@@ -13,19 +13,29 @@ class VerificationCodeViewController: UIViewController {
 
   // MARK: - IBOutlets
   @IBOutlet weak var verificationCodeView: KWVerificationCodeView!
+  @IBOutlet weak var submitButton: UIButton!
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    submitButton.isEnabled = false
+    verificationCodeView.delegate = self
   }
-  
+    
   // MARK: - IBAction
   @IBAction func submitButtonTapped(_ sender: UIButton) {
     if verificationCodeView.hasValidCode() {
       let alertController = UIAlertController(title: "Success", message: "Code is \(verificationCodeView.getVerificationCode())", preferredStyle: .alert)
       let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
       alertController.addAction(okAction)
-      self.present(alertController, animated: true, completion: nil)
+      present(alertController, animated: true, completion: nil)
     }
+  }
+}
+
+// MARK: - KWVerificationCodeViewDelegate
+extension VerificationCodeViewController: KWVerificationCodeViewDelegate {
+  func didChangeVerificationCode() {
+    self.submitButton.isEnabled = verificationCodeView.hasValidCode()
   }
 }
