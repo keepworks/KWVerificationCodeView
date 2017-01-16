@@ -21,14 +21,14 @@ public protocol KWVerificationCodeViewDelegate: class {
   @IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
     didSet {
       for textFieldView in textFieldViews {
-        textFieldView.underlineColor = self.underlineColor
+        textFieldView.underlineColor = underlineColor
       }
     }
   }
   @IBInspectable var underlineSelectedColor: UIColor = UIColor.blue {
     didSet {
       for textFieldView in textFieldViews {
-        textFieldView.underlineSelectedColor = self.underlineSelectedColor
+        textFieldView.underlineSelectedColor = underlineSelectedColor
       }
     }
   }
@@ -109,7 +109,7 @@ extension KWVerificationCodeView: KWTextFieldDelegate {
     textFieldViews[validIndex].reset()
   }
   
-  func didEndEditing() {
+  func didChangeCharacters() {
     delegate?.didChangeVerificationCode()
   }
 }

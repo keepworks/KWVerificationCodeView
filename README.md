@@ -1,14 +1,12 @@
-KWVerificationCodeView
-==================
+# KWVerificationCodeView
 
-[![CI Status](http://img.shields.io/travis/Athul Sai/KWVerificationCodeView.svg?style=flat)](https://travis-ci.org/Athul Sai/KWVerificationCodeView)
 [![Version](https://img.shields.io/cocoapods/v/KWVerificationCodeView.svg?style=flat)](http://cocoapods.org/pods/KWVerificationCodeView)
 [![License](https://img.shields.io/cocoapods/l/KWVerificationCodeView.svg?style=flat)](http://cocoapods.org/pods/KWVerificationCodeView)
 [![Platform](https://img.shields.io/cocoapods/p/KWVerificationCodeView.svg?style=flat)](http://cocoapods.org/pods/KWVerificationCodeView)
 
 A customisable verification code view with built in validation. Can be used for one time passwords (OTPs), email verification codes etc.
 
-![Screenshot](Example/KWVerificationCodeView.gif)
+![Screenshot](Screenshots/KWVerificationCodeView.gif)
 
 ## Example
 
@@ -30,7 +28,7 @@ pod "KWVerificationCodeView"
 
 Add a `UIView` in your *Storyboard* and change the class to `KWVerificationCodeView`. You can set the properties in the *Attributes Inspector* and see a live preview:
 
-![Interface Builder Screenshot](Example/interfacebuilder.png)
+![Interface Builder Screenshot](Screenshots/interfacebuilder.png)
 
 It is possile to set the default and selected colors of the underline in the *Storyboard*.
 

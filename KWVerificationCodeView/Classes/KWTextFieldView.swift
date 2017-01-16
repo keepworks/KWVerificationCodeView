@@ -11,7 +11,7 @@ import UIKit
 protocol KWTextFieldDelegate: class {
   func moveToNext(_ textFieldView: KWTextFieldView)
   func moveToPrevious(_ textFieldView: KWTextFieldView, oldCode: String)
-  func didEndEditing()
+  func didChangeCharacters()
 }
 
 @IBDesignable class KWTextFieldView: UIView {
@@ -22,7 +22,7 @@ protocol KWTextFieldDelegate: class {
   // MARK: - IBInspectables
   @IBInspectable var underlineColor: UIColor = UIColor.darkGray {
     didSet {
-      underlineView.backgroundColor = self.underlineColor
+      underlineView.backgroundColor = underlineColor
     }
   }
   @IBInspectable var underlineSelectedColor: UIColor = UIColor.blue
@@ -78,7 +78,7 @@ protocol KWTextFieldDelegate: class {
   }
   
   fileprivate func updateUnderline() {
-    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? self.underlineSelectedColor : self.underlineColor
+    underlineView.backgroundColor = numberTextField.text?.trim() != "" ? underlineSelectedColor : underlineColor
   }
 }
 
@@ -96,7 +96,7 @@ extension KWTextFieldView: UITextFieldDelegate {
       numberTextField.text = " "
     }
     
-    delegate?.didEndEditing()
+    delegate?.didChangeCharacters()
     updateUnderline()
     
     return newString.characters.count <= type(of: self).maxCharactersLength

@@ -18,6 +18,7 @@ class VerificationCodeViewController: UIViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     submitButton.isEnabled = false
     verificationCodeView.delegate = self
   }
@@ -36,6 +37,6 @@ class VerificationCodeViewController: UIViewController {
 // MARK: - KWVerificationCodeViewDelegate
 extension VerificationCodeViewController: KWVerificationCodeViewDelegate {
   func didChangeVerificationCode() {
-    self.submitButton.isEnabled = verificationCodeView.hasValidCode()
+    submitButton.isEnabled = verificationCodeView.hasValidCode()
   }
 }
