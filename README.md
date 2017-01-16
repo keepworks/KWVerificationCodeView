@@ -59,4 +59,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/keepwo
 
 ## License
 
-KWVerificationCodeView is available under the MIT license. See the LICENSE file for more info.
+KWVerificationCodeView is available under the [MIT License](http://opensource.org/licenses/MIT). See the [License](https://github.com/keepworks/KWVerificationCodeView/blob/master/LICENSE) file for more info.
