@@ -41,7 +41,7 @@ It is possile to set the default and selected colors of the underline in the *St
 
 ### Delegate
 
-`KWVerificationCodeViewDelegate` has a method `didChangeVerificationCode()`, which you can implement to check for valid code in real time. This comes handy in stituations where you have to enable the submit button only if the verification code is valid.
+`KWVerificationCodeViewDelegate` has a method `didChangeVerificationCode()`, which you can implement to check for valid code in real time. This comes handy in situations where you have to enable the submit button only if the verification code is valid.
 
 ## Author
 
