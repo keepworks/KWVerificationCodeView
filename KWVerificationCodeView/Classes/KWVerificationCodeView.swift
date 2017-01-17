@@ -52,15 +52,12 @@ public protocol KWVerificationCodeViewDelegate: class {
   
   @IBInspectable var textFont: String = "" {
     didSet {
-      if textFont.trim() == "" {
-        textFieldFont = UIFont.systemFont(ofSize: textSize)
+      if let font = UIFont(name: textFont.trim(), size: textSize) {
+        textFieldFont = font
       } else {
-        if let font = UIFont(name: textFont.trim(), size: textSize) {
-          textFieldFont = font
-        } else {
-          textFieldFont = UIFont.systemFont(ofSize: textSize)
-        }
+        textFieldFont = UIFont.systemFont(ofSize: textSize)
       }
+      
       for textFieldView in textFieldViews {
         textFieldView.numberTextField.font = textFieldFont
       }

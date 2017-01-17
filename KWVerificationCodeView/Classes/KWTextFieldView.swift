@@ -42,14 +42,10 @@ protocol KWTextFieldDelegate: class {
   
   @IBInspectable var textFont: String = "" {
     didSet {
-      if textFont.trim() == "" {
-        numberTextField.font = UIFont.systemFont(ofSize: textSize)
+      if let font = UIFont(name: textFont, size: textSize) {
+        numberTextField.font = font
       } else {
-        if let font = UIFont(name: textFont, size: textSize) {
-          numberTextField.font = font
-        } else {
-          numberTextField.font = UIFont.systemFont(ofSize: textSize)
-        }
+        numberTextField.font = UIFont.systemFont(ofSize: textSize)
       }
     }
   }
@@ -68,11 +64,8 @@ protocol KWTextFieldDelegate: class {
   
   @IBInspectable var darkKeyboard: Bool = false {
     didSet {
-      if darkKeyboard {
-        numberTextField.keyboardAppearance = .dark
-      } else {
-        numberTextField.keyboardAppearance = .light
-      }
+      keyboardAppearance = darkKeyboard ? .dark : .light
+      numberTextField.keyboardAppearance = keyboardAppearance
     }
   }
   
@@ -81,6 +74,7 @@ protocol KWTextFieldDelegate: class {
   @IBOutlet weak private var underlineView: UIView!
   
   // MARK: - Variables
+  private var keyboardAppearance = UIKeyboardAppearance.default
   weak var delegate: KWTextFieldDelegate?
   
   // MARK: - Lifecycle
