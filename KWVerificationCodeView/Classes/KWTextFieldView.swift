@@ -25,17 +25,21 @@ protocol KWTextFieldDelegate: class {
       underlineView.backgroundColor = underlineColor
     }
   }
+  
   @IBInspectable var underlineSelectedColor: UIColor = UIColor.black
+  
   @IBInspectable var textColor: UIColor = UIColor.darkText {
     didSet {
       numberTextField.textColor = textColor
     }
   }
+  
   @IBInspectable var textSize: CGFloat = 24.0 {
     didSet {
       numberTextField.font = UIFont.systemFont(ofSize: textSize)
     }
   }
+  
   @IBInspectable var textFont: String = "" {
     didSet {
       if textFont.trim() == "" {
@@ -49,16 +53,19 @@ protocol KWTextFieldDelegate: class {
       }
     }
   }
+  
   @IBInspectable var textFieldBackgroundColor: UIColor = UIColor.clear {
     didSet {
       numberTextField.backgroundColor = textFieldBackgroundColor
     }
   }
+  
   @IBInspectable var textFieldTintColor: UIColor = UIColor.blue {
     didSet {
       numberTextField.tintColor = textFieldTintColor
     }
   }
+  
   @IBInspectable var darkKeyboard: Bool = false {
     didSet {
       if darkKeyboard {

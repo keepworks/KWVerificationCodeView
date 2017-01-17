@@ -25,6 +25,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var underlineSelectedColor: UIColor = UIColor.black {
     didSet {
       for textFieldView in textFieldViews {
@@ -32,6 +33,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var textColor: UIColor = UIColor.darkText {
     didSet {
       for textFieldView in textFieldViews {
@@ -39,6 +41,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var textSize: CGFloat = 24.0 {
     didSet {
       for textFieldView in textFieldViews {
@@ -46,6 +49,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var textFont: String = "" {
     didSet {
       if textFont.trim() == "" {
@@ -62,6 +66,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var textFieldBackgroundColor: UIColor = UIColor.clear {
     didSet {
       for textFieldView in textFieldViews {
@@ -69,6 +74,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var textFieldTintColor: UIColor = UIColor.blue {
     didSet {
       for textFieldView in textFieldViews {
@@ -76,28 +82,24 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
   @IBInspectable var darkKeyboard: Bool = false {
     didSet {
-      if darkKeyboard {
-        keyboardColor = .dark
-      } else {
-       keyboardColor = .light
-      }
-      
+      keyboardAppearance = darkKeyboard ? .dark : .light
       for textFieldView in textFieldViews {
-        textFieldView.numberTextField.keyboardAppearance = keyboardColor
+        textFieldView.numberTextField.keyboardAppearance = keyboardAppearance
       }
     }
   }
-
-    // MARK: - IBOutlets
+  
+  // MARK: - IBOutlets
   @IBOutlet weak private var textFieldView1: KWTextFieldView!
   @IBOutlet weak private var textFieldView2: KWTextFieldView!
   @IBOutlet weak private var textFieldView3: KWTextFieldView!
   @IBOutlet weak private var textFieldView4: KWTextFieldView!
   
   // MARK: - Variables
-  private var keyboardColor = UIKeyboardAppearance.default
+  private var keyboardAppearance = UIKeyboardAppearance.default
   private var textFieldFont = UIFont.systemFont(ofSize: 24.0)
   
   lazy var textFieldViews: [KWTextFieldView] = {

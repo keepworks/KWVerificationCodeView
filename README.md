@@ -31,17 +31,45 @@ Add a `UIView` in your *Storyboard* and change the class to `KWVerificationCodeV
 
 ![Interface Builder Screenshot](Screenshots/interfacebuilder.png)
 
-It is possile to set the default and selected colors of the underline in the *Storyboard*.
+The properties which can be directly set in the *Attributes Inspector* and their default values are as follows:
+
+- `Underline Color` - Dark grey color
+
+- `Underline Selected Color` - Black color
+
+- `Text Color` - Dark text color
+
+- `Text Size` - 24.0
+
+- `Text Font` - System font
+
+- `Text Field Background Color` - Clear color
+
+- `Text Field Tint Color` - Blue color
+
+- `Dark Keyboard` - Default keyboard apperance
 
 ### Methods
 
-`hasValidCode() -> Bool` - Returns true when the entered code is valid.
+The `KWVerificationCodeView` has the following methods:
 
-`getVerificationCode() -> String` - Returns the validation code. 
+	hasValidCode() -> Bool 
 
-### Delegate
+Returns true when the entered code is valid.
 
-`KWVerificationCodeViewDelegate` has a method `didChangeVerificationCode()`, which you can implement to check for valid code in real time. This comes handy in situations where you have to enable the submit button only if the verification code is valid.
+	getVerificationCode() -> String 
+
+Returns the validation code. 
+
+### Protocols
+
+#### KWVerificationCodeViewDelegate
+
+KWVerificationCodeViewDelegate protocol has the following method:
+
+	didChangeVerificationCode()
+
+Notifies that the text in `KWVerificationCodeView` has been changed. This is especially useful in situations where you have to enable the submit button only if the verification code is valid.
 
 ## Author
 
