@@ -25,10 +25,66 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  @IBInspectable var underlineSelectedColor: UIColor = UIColor.blue {
+  
+  @IBInspectable var underlineSelectedColor: UIColor = UIColor.black {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.underlineSelectedColor = underlineSelectedColor
+      }
+    }
+  }
+  
+  @IBInspectable var textColor: UIColor = UIColor.darkText {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.textColor = textColor
+      }
+    }
+  }
+  
+  @IBInspectable var textSize: CGFloat = 24.0 {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.font = UIFont.systemFont(ofSize: textSize)
+      }
+    }
+  }
+  
+  @IBInspectable var textFont: String = "" {
+    didSet {
+      if let font = UIFont(name: textFont.trim(), size: textSize) {
+        textFieldFont = font
+      } else {
+        textFieldFont = UIFont.systemFont(ofSize: textSize)
+      }
+      
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.font = textFieldFont
+      }
+    }
+  }
+  
+  @IBInspectable var textFieldBackgroundColor: UIColor = UIColor.clear {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.backgroundColor = textFieldBackgroundColor
+      }
+    }
+  }
+  
+  @IBInspectable var textFieldTintColor: UIColor = UIColor.blue {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.tintColor = textFieldTintColor
+      }
+    }
+  }
+  
+  @IBInspectable var darkKeyboard: Bool = false {
+    didSet {
+      keyboardAppearance = darkKeyboard ? .dark : .light
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.keyboardAppearance = keyboardAppearance
       }
     }
   }
@@ -40,6 +96,9 @@ public protocol KWVerificationCodeViewDelegate: class {
   @IBOutlet weak private var textFieldView4: KWTextFieldView!
   
   // MARK: - Variables
+  private var keyboardAppearance = UIKeyboardAppearance.default
+  private var textFieldFont = UIFont.systemFont(ofSize: 24.0)
+  
   lazy var textFieldViews: [KWTextFieldView] = {
     [unowned self] in
     
