@@ -49,6 +49,14 @@ The properties which can be directly set in the *Attributes Inspector* and their
 
 - `Dark Keyboard` - Default keyboard apperance
 
+### Variables
+
+The `KWVerificationCodeView` has the following methods:
+
+    .isTappable = true
+
+Makes the KWVerficationCodeView Tappable. Default value is `false`
+
 ### Methods
 
 The `KWVerificationCodeView` has the following methods:

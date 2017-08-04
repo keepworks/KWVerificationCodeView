@@ -94,8 +94,15 @@ public protocol KWVerificationCodeViewDelegate: class {
   @IBOutlet weak private var textFieldView2: KWTextFieldView!
   @IBOutlet weak private var textFieldView3: KWTextFieldView!
   @IBOutlet weak private var textFieldView4: KWTextFieldView!
+  @IBOutlet var view: UIView!
   
   // MARK: - Variables
+  public var isTappable: Bool = false {
+    didSet {
+      view.isUserInteractionEnabled = isTappable
+    }
+  }
+
   private var keyboardAppearance = UIKeyboardAppearance.default
   private var textFieldFont = UIFont.systemFont(ofSize: 24.0)
   
@@ -163,9 +170,11 @@ extension KWVerificationCodeView: KWTextFieldDelegate {
       return
     }
     
-    let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
-    textFieldViews[validIndex].activate()
-    textFieldViews[validIndex].reset()
+    if textFieldView.code == " " {
+      let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
+      textFieldViews[validIndex].activate()
+      textFieldViews[validIndex].reset()
+    }
   }
   
   func didChangeCharacters() {
