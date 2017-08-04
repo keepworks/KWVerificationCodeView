@@ -51,11 +51,11 @@ The properties which can be directly set in the *Attributes Inspector* and their
 
 ### Variables
 
-The `KWVerificationCodeView` has the following methods:
+The `KWVerificationCodeView` has the following variables:
 
-    .isTappable = true
+    isTappable: Bool
 
-Makes the KWVerficationCodeView Tappable. Default value is `false`
+Makes the KWVerficationCodeView tappable. Default value is `false`
 
 ### Methods
 
