@@ -1,65 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView" customModuleProvider="target">
-            <connections>
-                <outlet property="textFieldView1" destination="3tC-Ut-0VN" id="t58-RY-QhX"/>
-                <outlet property="textFieldView2" destination="jRf-YT-Rjh" id="Wb0-Dc-FHp"/>
-                <outlet property="textFieldView3" destination="uqQ-2Z-1XV" id="YWY-Vf-pos"/>
-                <outlet property="textFieldView4" destination="vt9-dd-ekk" id="t2F-rY-Rzz"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUS-Hj-ChZ">
             <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tC-Ut-0VN" userLabel="textFieldView1" customClass="KWTextFieldView" customModule="KWVerificationCodeView">
-                    <rect key="frame" x="10" y="6" width="81.5" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ORc-vc-r1t"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-YT-Rjh" userLabel="textFieldView2" customClass="KWTextFieldView" customModule="KWVerificationCodeView">
-                    <rect key="frame" x="101" y="6" width="81" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqQ-2Z-1XV" userLabel="textFieldView3" customClass="KWTextFieldView" customModule="KWVerificationCodeView">
-                    <rect key="frame" x="192" y="6" width="81.5" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vt9-dd-ekk" userLabel="textFieldView4" customClass="KWTextFieldView" customModule="KWVerificationCodeView">
-                    <rect key="frame" x="284" y="6" width="81" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-            </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="3tC-Ut-0VN" firstAttribute="leading" secondItem="DUS-Hj-ChZ" secondAttribute="leading" constant="10" id="0di-mx-zfw"/>
-                <constraint firstAttribute="bottom" secondItem="3tC-Ut-0VN" secondAttribute="bottom" constant="6" id="5uF-mn-LoT"/>
-                <constraint firstItem="jRf-YT-Rjh" firstAttribute="height" secondItem="3tC-Ut-0VN" secondAttribute="height" id="Gb4-Os-cwr"/>
-                <constraint firstItem="vt9-dd-ekk" firstAttribute="top" secondItem="DUS-Hj-ChZ" secondAttribute="top" constant="6" id="Kg2-dv-3YJ"/>
-                <constraint firstItem="jRf-YT-Rjh" firstAttribute="width" secondItem="3tC-Ut-0VN" secondAttribute="width" id="U4v-Ht-Drn"/>
-                <constraint firstItem="vt9-dd-ekk" firstAttribute="width" secondItem="uqQ-2Z-1XV" secondAttribute="width" id="VK2-dB-JL0"/>
-                <constraint firstItem="jRf-YT-Rjh" firstAttribute="top" secondItem="DUS-Hj-ChZ" secondAttribute="top" constant="6" id="Vvq-kp-ykE"/>
-                <constraint firstAttribute="trailing" secondItem="vt9-dd-ekk" secondAttribute="trailing" constant="10" id="fPo-e5-fRn"/>
-                <constraint firstItem="vt9-dd-ekk" firstAttribute="height" secondItem="uqQ-2Z-1XV" secondAttribute="height" id="jCR-aZ-KYb"/>
-                <constraint firstItem="uqQ-2Z-1XV" firstAttribute="height" secondItem="jRf-YT-Rjh" secondAttribute="height" id="nlt-Sw-o2S"/>
-                <constraint firstItem="uqQ-2Z-1XV" firstAttribute="leading" secondItem="jRf-YT-Rjh" secondAttribute="trailing" constant="10" id="rEH-pO-Tk3"/>
-                <constraint firstItem="uqQ-2Z-1XV" firstAttribute="width" secondItem="jRf-YT-Rjh" secondAttribute="width" id="rtg-SH-V0Y"/>
-                <constraint firstItem="vt9-dd-ekk" firstAttribute="leading" secondItem="uqQ-2Z-1XV" secondAttribute="trailing" constant="10" id="u6T-vB-S9e"/>
-                <constraint firstItem="jRf-YT-Rjh" firstAttribute="leading" secondItem="3tC-Ut-0VN" secondAttribute="trailing" constant="10" id="wZW-q5-Cso"/>
-                <constraint firstItem="3tC-Ut-0VN" firstAttribute="top" secondItem="DUS-Hj-ChZ" secondAttribute="top" constant="6" id="xJ5-uo-Bvo"/>
-                <constraint firstItem="uqQ-2Z-1XV" firstAttribute="top" secondItem="DUS-Hj-ChZ" secondAttribute="top" constant="6" id="yF5-cP-KGJ"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="180.5" y="-118"/>
