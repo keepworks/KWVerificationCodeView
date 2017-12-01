@@ -14,15 +14,15 @@ class VerificationCodeViewController: UIViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var verificationCodeView: KWVerificationCodeView!
   @IBOutlet weak var submitButton: UIButton!
-  
+
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     submitButton.isEnabled = false
     verificationCodeView.delegate = self
   }
-    
+
   // MARK: - IBAction
   @IBAction func submitButtonTapped(_ sender: UIButton) {
     if verificationCodeView.hasValidCode() {

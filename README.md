@@ -39,6 +39,8 @@ The properties which can be directly set in the *Attributes Inspector* and their
 
 - `Text Color` - Dark text color
 
+- `Digits` - 4
+
 - `Text Size` - 24.0
 
 - `Text Font` - System font

@@ -13,10 +13,13 @@ public protocol KWVerificationCodeViewDelegate: class {
 }
 
 @IBDesignable open class KWVerificationCodeView: UIView {
-  
+
   // MARK: - Constants
-  static let maxCharactersLength = 1
-  
+  private let minDigits: UInt8 = 2
+  private let maxDigits: UInt8 = 8
+  private let textFieldViewLeadingSpace: CGFloat = 10
+  private let textFieldViewVerticalSpace: CGFloat = 6
+
   // MARK: - IBInspectables
   @IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
     didSet {
@@ -25,7 +28,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
+
   @IBInspectable var underlineSelectedColor: UIColor = UIColor.black {
     didSet {
       for textFieldView in textFieldViews {
@@ -33,7 +36,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
+
   @IBInspectable var textColor: UIColor = UIColor.darkText {
     didSet {
       for textFieldView in textFieldViews {
@@ -41,7 +44,13 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
+
+  @IBInspectable var digits: UInt8 = 4 {
+    didSet {
+      updateNumberOfDigits()
+    }
+  }
+
   @IBInspectable var textSize: CGFloat = 24.0 {
     didSet {
       for textFieldView in textFieldViews {
@@ -49,7 +58,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
+
   @IBInspectable var textFont: String = "" {
     didSet {
       if let font = UIFont(name: textFont.trim(), size: textSize) {
@@ -57,13 +66,13 @@ public protocol KWVerificationCodeViewDelegate: class {
       } else {
         textFieldFont = UIFont.systemFont(ofSize: textSize)
       }
-      
+
       for textFieldView in textFieldViews {
         textFieldView.numberTextField.font = textFieldFont
       }
     }
   }
-  
+
   @IBInspectable var textFieldBackgroundColor: UIColor = UIColor.clear {
     didSet {
       for textFieldView in textFieldViews {
@@ -71,7 +80,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
+
   @IBInspectable var textFieldTintColor: UIColor = UIColor.blue {
     didSet {
       for textFieldView in textFieldViews {
@@ -79,7 +88,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
+
   @IBInspectable var darkKeyboard: Bool = false {
     didSet {
       keyboardAppearance = darkKeyboard ? .dark : .light
@@ -88,65 +97,91 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak private var textFieldView1: KWTextFieldView!
-  @IBOutlet weak private var textFieldView2: KWTextFieldView!
-  @IBOutlet weak private var textFieldView3: KWTextFieldView!
-  @IBOutlet weak private var textFieldView4: KWTextFieldView!
-  
+
   // MARK: - Variables
+  fileprivate var textFieldViews = [KWTextFieldView]()
   private var keyboardAppearance = UIKeyboardAppearance.default
   private var textFieldFont = UIFont.systemFont(ofSize: 24.0)
-  
-  lazy var textFieldViews: [KWTextFieldView] = {
-    [unowned self] in
-    
-    return [self.textFieldView1, self.textFieldView2, self.textFieldView3, self.textFieldView4]
-    }()
-  
+  private var requiredDigits: UInt8 {
+    switch digits {
+    case minDigits...maxDigits:
+      return digits
+
+    case 0..<minDigits:
+      return minDigits
+
+    default:
+      return maxDigits
+    }
+  }
+
   weak public var delegate: KWVerificationCodeViewDelegate?
-  
+
   // MARK: - Lifecycle
   override init(frame: CGRect) {
     super.init(frame: frame)
-    
-    loadViewFromNib()
+
+    setup()
   }
-  
+
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    
+
+    setup()
+  }
+
+  // MARK: - Private Methods
+  private func updateNumberOfDigits() {
+    textFieldViews.forEach { $0.removeFromSuperview() }
+    textFieldViews.removeAll()
+
+    let textFieldViewWidth = (frame.size.width - (textFieldViewLeadingSpace * (CGFloat(requiredDigits) + 1))) / CGFloat(requiredDigits)
+    let textFieldViewHeight: CGFloat = frame.size.height - (textFieldViewVerticalSpace * 2)
+    var currentX = textFieldViewLeadingSpace
+    for _ in 0..<requiredDigits {
+      let textFieldView = KWTextFieldView(frame: CGRect(x: currentX, y: textFieldViewVerticalSpace, width: textFieldViewWidth, height: textFieldViewHeight))
+      textFieldView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
+      addSubview(textFieldView)
+      textFieldView.delegate = self
+      textFieldViews.append(textFieldView)
+      currentX += (textFieldViewWidth + textFieldViewLeadingSpace)
+    }
+
+    textFieldViews[0].numberTextField.text = " "
+  }
+
+  private func setup() {
     loadViewFromNib()
     setupVerificationCodeViews()
+    updateNumberOfDigits()
   }
-  
+
   // MARK: - Public Methods
   public func getVerificationCode() -> String {
     var verificationCode = ""
     for textFieldView in textFieldViews {
       verificationCode += textFieldView.numberTextField.text!
     }
-    
+
     return verificationCode
   }
-  
+
   public func hasValidCode() -> Bool {
     for textFieldView in textFieldViews {
       if Int(textFieldView.numberTextField.text!) == nil {
         return false
       }
     }
-    
+
     return true
   }
-  
+
   // MARK: - Private Methods
   private func setupVerificationCodeViews() {
     for textFieldView in textFieldViews {
       textFieldView.delegate = self
     }
-    
+
     textFieldViews.first?.activate()
   }
 }
@@ -157,17 +192,17 @@ extension KWVerificationCodeView: KWTextFieldDelegate {
     let validIndex = textFieldViews.index(of: textFieldView) == textFieldViews.count - 1 ? textFieldViews.index(of: textFieldView)! : textFieldViews.index(of: textFieldView)! + 1
     textFieldViews[validIndex].activate()
   }
-  
+
   func moveToPrevious(_ textFieldView: KWTextFieldView, oldCode: String) {
     if textFieldViews.last == textFieldView && oldCode != " " {
       return
     }
-    
+
     let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
     textFieldViews[validIndex].activate()
     textFieldViews[validIndex].reset()
   }
-  
+
   func didChangeCharacters() {
     delegate?.didChangeVerificationCode()
   }
