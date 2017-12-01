@@ -33,35 +33,35 @@ Add a `UIView` in your *Storyboard* and change the class to `KWVerificationCodeV
 
 The properties which can be directly set in the *Attributes Inspector* and their default values are as follows:
 
-- `Underline Color` - Dark grey color
+- `Underline Color` - Dark Gray Color
 
-- `Underline Selected Color` - Black color
+- `Underline Selected Color` - Black Color
 
-- `Text Color` - Dark text color
+- `Text Color` - Dark Text Color
 
 - `Digits` - 4
 
 - `Text Size` - 24.0
 
-- `Text Font` - System font
+- `Text Font` - System Font
 
-- `Text Field Background Color` - Clear color
+- `Text Field Background Color` - Clear Color
 
-- `Text Field Tint Color` - Blue color
+- `Text Field Tint Color` - Blue Color
 
-- `Dark Keyboard` - Default keyboard apperance
+- `Dark Keyboard` - Default Keyboard Appearance
 
 ### Methods
 
 The `KWVerificationCodeView` has the following methods:
 
-	hasValidCode() -> Bool 
+	hasValidCode() -> Bool
 
 Returns true when the entered code is valid.
 
-	getVerificationCode() -> String 
+	getVerificationCode() -> String
 
-Returns the validation code. 
+Returns the validation code.
 
 ### Protocols
 
