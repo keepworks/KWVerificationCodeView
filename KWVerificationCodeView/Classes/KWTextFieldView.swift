@@ -77,6 +77,10 @@ protocol KWTextFieldDelegate: class {
   private var keyboardAppearance = UIKeyboardAppearance.default
   weak var delegate: KWTextFieldDelegate?
 
+  var code: String? {
+    return numberTextField.text
+  }
+
   // MARK: - Lifecycle
   override init(frame: CGRect) {
     super.init(frame: frame)
