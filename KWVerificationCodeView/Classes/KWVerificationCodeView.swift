@@ -21,7 +21,7 @@ public protocol KWVerificationCodeViewDelegate: class {
   private let textFieldViewVerticalSpace: CGFloat = 6
 
   // MARK: - IBInspectables
-  @IBInspectable open var underlineColor: UIColor = UIColor.darkGray {
+  @IBInspectable public var underlineColor: UIColor = UIColor.darkGray {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.underlineColor = underlineColor
@@ -29,7 +29,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var underlineSelectedColor: UIColor = UIColor.black {
+  @IBInspectable public var underlineSelectedColor: UIColor = UIColor.black {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.underlineSelectedColor = underlineSelectedColor
@@ -37,7 +37,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var textColor: UIColor = UIColor.darkText {
+  @IBInspectable public var textColor: UIColor = UIColor.darkText {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.numberTextField.textColor = textColor
@@ -45,13 +45,13 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var digits: UInt8 = 4 {
+  @IBInspectable public var digits: UInt8 = 4 {
     didSet {
       updateNumberOfDigits()
     }
   }
 
-  @IBInspectable var textSize: CGFloat = 24.0 {
+  @IBInspectable public var textSize: CGFloat = 24.0 {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.numberTextField.font = UIFont.systemFont(ofSize: textSize)
@@ -59,7 +59,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var textFont: String = "" {
+  @IBInspectable public var textFont: String = "" {
     didSet {
       if let font = UIFont(name: textFont.trim(), size: textSize) {
         textFieldFont = font
@@ -73,7 +73,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var textFieldBackgroundColor: UIColor = UIColor.clear {
+  @IBInspectable public var textFieldBackgroundColor: UIColor = UIColor.clear {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.numberTextField.backgroundColor = textFieldBackgroundColor
@@ -81,7 +81,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var textFieldTintColor: UIColor = UIColor.blue {
+  @IBInspectable public var textFieldTintColor: UIColor = UIColor.blue {
     didSet {
       for textFieldView in textFieldViews {
         textFieldView.numberTextField.tintColor = textFieldTintColor
@@ -89,7 +89,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  @IBInspectable var darkKeyboard: Bool = false {
+  @IBInspectable public var darkKeyboard: Bool = false {
     didSet {
       keyboardAppearance = darkKeyboard ? .dark : .light
       for textFieldView in textFieldViews {
@@ -97,6 +97,7 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+
   // MARK: - IBOutlets
   @IBOutlet var view: UIView!
 
