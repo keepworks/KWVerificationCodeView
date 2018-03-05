@@ -47,7 +47,7 @@ public protocol KWVerificationCodeViewDelegate: class {
 
   @IBInspectable public var digits: UInt8 = 4 {
     didSet {
-      updateNumberOfDigits()
+      setupTextFieldViews()
     }
   }
 
@@ -139,32 +139,6 @@ public protocol KWVerificationCodeViewDelegate: class {
     setup()
   }
 
-  // MARK: - Private Methods
-  private func updateNumberOfDigits() {
-    textFieldViews.forEach { $0.removeFromSuperview() }
-    textFieldViews.removeAll()
-
-    let textFieldViewWidth = (frame.size.width - (textFieldViewLeadingSpace * (CGFloat(requiredDigits) + 1))) / CGFloat(requiredDigits)
-    let textFieldViewHeight: CGFloat = frame.size.height - (textFieldViewVerticalSpace * 2)
-    var currentX = textFieldViewLeadingSpace
-    for _ in 0..<requiredDigits {
-      let textFieldView = KWTextFieldView(frame: CGRect(x: currentX, y: textFieldViewVerticalSpace, width: textFieldViewWidth, height: textFieldViewHeight))
-      textFieldView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
-      addSubview(textFieldView)
-      textFieldView.delegate = self
-      textFieldViews.append(textFieldView)
-      currentX += (textFieldViewWidth + textFieldViewLeadingSpace)
-    }
-
-    textFieldViews[0].numberTextField.text = " "
-  }
-
-  private func setup() {
-    loadViewFromNib()
-    setupVerificationCodeViews()
-    updateNumberOfDigits()
-  }
-
   // MARK: - Public Methods
   public func getVerificationCode() -> String {
     var verificationCode = ""
@@ -186,7 +160,33 @@ public protocol KWVerificationCodeViewDelegate: class {
   }
 
   // MARK: - Private Methods
-  private func setupVerificationCodeViews() {
+  private func setup() {
+    loadViewFromNib()
+
+    setupTextFieldViews()
+    setupVerificationCodeView()
+  }
+
+  private func setupTextFieldViews() {
+    textFieldViews.forEach { $0.removeFromSuperview() }
+    textFieldViews.removeAll()
+
+    let textFieldViewWidth = (frame.size.width - (textFieldViewLeadingSpace * (CGFloat(requiredDigits) + 1))) / CGFloat(requiredDigits)
+    let textFieldViewHeight: CGFloat = frame.size.height - (textFieldViewVerticalSpace * 2)
+    var currentX = textFieldViewLeadingSpace
+    for _ in 0..<requiredDigits {
+      let textFieldView = KWTextFieldView(frame: CGRect(x: currentX, y: textFieldViewVerticalSpace, width: textFieldViewWidth, height: textFieldViewHeight))
+      textFieldView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
+      addSubview(textFieldView)
+      textFieldView.delegate = self
+      textFieldViews.append(textFieldView)
+      currentX += (textFieldViewWidth + textFieldViewLeadingSpace)
+    }
+
+    textFieldViews[0].numberTextField.text = " "
+  }
+
+  private func setupVerificationCodeView() {
     for textFieldView in textFieldViews {
       textFieldView.delegate = self
     }
