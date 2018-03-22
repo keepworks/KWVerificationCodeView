@@ -123,7 +123,7 @@ protocol KWTextFieldDelegate: class {
   }
 
   // MARK: - FilePrivate Methods
-  dynamic fileprivate func textFieldDidChange(_ notification: Foundation.Notification) {
+  @objc dynamic fileprivate func textFieldDidChange(_ notification: Foundation.Notification) {
     if numberTextField.text?.count == 0 {
       numberTextField.text = " "
     }
