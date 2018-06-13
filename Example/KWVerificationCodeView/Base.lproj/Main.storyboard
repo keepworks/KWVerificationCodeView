@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -69,9 +69,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9m-CU-XT6">
+                                <rect key="frame" x="88" y="447" width="200" height="30"/>
+                                <state key="normal" title="Add Programatically Example"/>
+                                <connections>
+                                    <segue destination="ViW-Wf-OWW" kind="presentation" id="PCu-5s-Oao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="z9m-CU-XT6" firstAttribute="top" secondItem="Skh-28-8br" secondAttribute="bottom" constant="50" id="3ER-Pd-VZR"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="P6k-pN-VEP" secondAttribute="bottom" constant="22" id="H7u-LC-n82"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="6e0-Am-MUv" secondAttribute="bottom" constant="90" id="HQQ-Ne-ux5"/>
                             <constraint firstItem="6e0-Am-MUv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="K9Y-GQ-xFr"/>
@@ -80,6 +88,7 @@
                             <constraint firstItem="Skh-28-8br" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bUo-66-X5C"/>
                             <constraint firstItem="P6k-pN-VEP" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="nb6-py-4Yg"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rI6-Fp-Ztx"/>
+                            <constraint firstItem="z9m-CU-XT6" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rwf-e1-tIX"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" constant="-30" id="vWu-wt-SXh"/>
                         </constraints>
                     </view>
@@ -91,6 +100,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-372" y="100"/>
+        </scene>
+        <!--Programatical Verification Code View Controller-->
+        <scene sceneID="PcA-p8-RcH">
+            <objects>
+                <viewController id="ViW-Wf-OWW" customClass="ProgramaticalVerificationCodeViewController" customModule="KWVerificationCodeView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mMV-mk-sPq"/>
+                        <viewControllerLayoutGuide type="bottom" id="wLY-h7-h8W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Uy-b5-xy6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add KWVerificationCode Programatically" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6U-8u-Nd6" userLabel="titleLabel">
+                                <rect key="frame" x="61.5" y="203.5" width="252" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="IZ7-B5-xnh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO4-xT-id3" userLabel="containerView">
+                                <rect key="frame" x="67" y="302.5" width="240" height="62"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ZKT-ZX-ywp"/>
+                                    <constraint firstAttribute="height" constant="62" id="nlq-5k-PEm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7r-Cg-pzE" userLabel="dismiss">
+                                <rect key="frame" x="160.5" y="414.5" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="ViW-Wf-OWW" eventType="touchUpInside" id="XuZ-EC-sB8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EO4-xT-id3" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="7ZN-6l-dPq"/>
+                            <constraint firstItem="a7r-Cg-pzE" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="8CX-Km-yfc"/>
+                            <constraint firstItem="f6U-8u-Nd6" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="AdM-x2-67B"/>
+                            <constraint firstItem="a7r-Cg-pzE" firstAttribute="top" secondItem="EO4-xT-id3" secondAttribute="bottom" constant="50" id="idc-nu-If0"/>
+                            <constraint firstItem="EO4-xT-id3" firstAttribute="centerY" secondItem="4Uy-b5-xy6" secondAttribute="centerY" id="m5d-Xg-QG5"/>
+                            <constraint firstItem="EO4-xT-id3" firstAttribute="top" secondItem="f6U-8u-Nd6" secondAttribute="bottom" constant="50" id="uVk-oY-Aj5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="EO4-xT-id3" id="fLF-6n-1kx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Plo-FI-tAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496.80000000000001" y="98.50074962518741"/>
         </scene>
     </scenes>
 </document>

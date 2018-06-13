@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		D1AA5A4D20D0FD7B007FE474 /* ProgramaticalVerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AA5A4C20D0FD7B007FE474 /* ProgramaticalVerificationCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		8F723ADDC751FC9CC3C9BE34 /* Pods-KWVerificationCodeView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWVerificationCodeView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWVerificationCodeView_Tests/Pods-KWVerificationCodeView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C3C8FC4284D4530532E3C9FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C68BD3F967305D340EA20FFD /* Pods_KWVerificationCodeView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWVerificationCodeView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1AA5A4C20D0FD7B007FE474 /* ProgramaticalVerificationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramaticalVerificationCodeViewController.swift; sourceTree = "<group>"; };
 		D51BF4885572F8FECD1E4AF7 /* Pods-KWVerificationCodeView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWVerificationCodeView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWVerificationCodeView_Example/Pods-KWVerificationCodeView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E6C0C121AF93D56E0FE9F947 /* KWVerificationCodeView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KWVerificationCodeView.podspec; path = ../KWVerificationCodeView.podspec; sourceTree = "<group>"; };
 		F538A5E79FE77B8D323F9B7B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* VerificationCodeViewController.swift */,
+				D1AA5A4C20D0FD7B007FE474 /* ProgramaticalVerificationCodeViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* VerificationCodeViewController.swift in Sources */,
+				D1AA5A4D20D0FD7B007FE474 /* ProgramaticalVerificationCodeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
