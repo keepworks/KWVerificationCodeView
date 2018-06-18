@@ -102,6 +102,8 @@ protocol KWTextFieldDelegate: class {
   private func setup() {
     loadViewFromNib()
     numberTextField.delegate = self
+    numberTextField.autocorrectionType = UITextAutocorrectionType.no
+    
     NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: numberTextField)
   }
 

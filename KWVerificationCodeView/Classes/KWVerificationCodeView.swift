@@ -98,6 +98,14 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
+  public var keyboardType: UIKeyboardType = UIKeyboardType.numberPad {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.keyboardType = keyboardType
+      }
+    }
+  }
+
   // MARK: - IBOutlets
   @IBOutlet var view: UIView!
 
@@ -151,7 +159,7 @@ public protocol KWVerificationCodeViewDelegate: class {
 
   public func hasValidCode() -> Bool {
     for textFieldView in textFieldViews {
-      if Int(textFieldView.numberTextField.text!) == nil {
+      if textFieldView.numberTextField.text?.trim() == nil {
         return false
       }
     }

@@ -51,6 +51,13 @@ The properties which can be directly set in the *Attributes Inspector* and their
 
 - `Dark Keyboard` - Default Keyboard Appearance
 
+Customizable properties
+
+- `keyboardType` - Sets the keyboard type (Defaults to Number Pad when not set)
+
+	  verificationCodeView.keyboardType = UIKeyboardType.emailAddress
+
+
 ### Variables
 
 The `KWVerificationCodeView` has the following variables:
