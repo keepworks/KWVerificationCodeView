@@ -17,13 +17,12 @@ class ProgramaticalVerificationCodeViewController: UIViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     let verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
     containerView.addSubview(verificationCodeView)
   }
-  
+
   @IBAction func dismissButtonTapped(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
 }
-
