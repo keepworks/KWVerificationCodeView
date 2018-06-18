@@ -21,7 +21,7 @@ class VerificationCodeViewController: UIViewController {
 
     submitButton.isEnabled = false
     verificationCodeView.delegate = self
-    
+
     /* Other available options
 
     verificationCodeView.keyboardType = UIKeyboardType.emailAddress

@@ -159,7 +159,7 @@ public protocol KWVerificationCodeViewDelegate: class {
 
   public func hasValidCode() -> Bool {
     for textFieldView in textFieldViews {
-      if textFieldView.numberTextField.text?.trim() == nil {
+      if textFieldView.numberTextField.text!.trim() == "" {
         return false
       }
     }
