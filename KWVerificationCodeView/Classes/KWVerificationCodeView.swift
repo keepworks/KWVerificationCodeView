@@ -167,6 +167,14 @@ public protocol KWVerificationCodeViewDelegate: class {
     return true
   }
 
+  public func clear() {
+    for textFieldView in textFieldViews {
+      textFieldView.numberTextField.text = ""
+    }
+    
+    textFieldViews[0].activate()
+  }
+  
   // MARK: - Private Methods
   private func setup() {
     loadViewFromNib()
