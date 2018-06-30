@@ -76,6 +76,13 @@
                                     <segue destination="ViW-Wf-OWW" kind="presentation" id="PCu-5s-Oao"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-3U-0Yz">
+                                <rect key="frame" x="266" y="362" width="34" height="30"/>
+                                <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h1q-Ts-lAH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -83,6 +90,8 @@
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="P6k-pN-VEP" secondAttribute="bottom" constant="22" id="H7u-LC-n82"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="6e0-Am-MUv" secondAttribute="bottom" constant="90" id="HQQ-Ne-ux5"/>
                             <constraint firstItem="6e0-Am-MUv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="K9Y-GQ-xFr"/>
+                            <constraint firstItem="XUw-3U-0Yz" firstAttribute="centerY" secondItem="Skh-28-8br" secondAttribute="centerY" id="Lmb-6J-uxd"/>
+                            <constraint firstItem="XUw-3U-0Yz" firstAttribute="leading" secondItem="Skh-28-8br" secondAttribute="trailing" constant="33.5" id="Lvp-ZH-Nu3"/>
                             <constraint firstAttribute="trailing" secondItem="6e0-Am-MUv" secondAttribute="trailing" constant="16" id="NnO-Pl-xaO"/>
                             <constraint firstItem="Skh-28-8br" firstAttribute="top" secondItem="ekS-Ew-GpT" secondAttribute="bottom" constant="22" id="UAT-si-Rcy"/>
                             <constraint firstItem="Skh-28-8br" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bUo-66-X5C"/>

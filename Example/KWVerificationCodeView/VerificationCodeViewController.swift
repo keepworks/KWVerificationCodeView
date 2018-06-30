@@ -23,9 +23,7 @@ class VerificationCodeViewController: UIViewController {
     verificationCodeView.delegate = self
 
     /* Other available options
-
     verificationCodeView.keyboardType = UIKeyboardType.emailAddress
-
     */
   }
 
@@ -37,6 +35,10 @@ class VerificationCodeViewController: UIViewController {
       alertController.addAction(okAction)
       present(alertController, animated: true, completion: nil)
     }
+  }
+
+  @IBAction func clearButtonTapped(_ sender: UIButton) {
+    verificationCodeView.clear()
   }
 }
 
