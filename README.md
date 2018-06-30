@@ -78,6 +78,10 @@ Returns true when the entered code is valid.
 
 Returns the validation code.
 
+	clear()
+
+Clears the verification code view and first field becomes first responder
+
 ### Protocols
 
 #### KWVerificationCodeViewDelegate
