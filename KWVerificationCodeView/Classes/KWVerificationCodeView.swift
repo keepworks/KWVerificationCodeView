@@ -192,7 +192,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     var currentX = textFieldViewLeadingSpace
     for _ in 0..<requiredDigits {
       let textFieldView = KWTextFieldView(frame: CGRect(x: currentX, y: textFieldViewVerticalSpace, width: textFieldViewWidth, height: textFieldViewHeight))
-      textFieldView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
+      textFieldView.autoresizingMask = [UIView.AutoresizingMask.flexibleLeftMargin, UIView.AutoresizingMask.flexibleRightMargin, UIView.AutoresizingMask.flexibleWidth]
       addSubview(textFieldView)
       textFieldView.delegate = self
       textFieldViews.append(textFieldView)

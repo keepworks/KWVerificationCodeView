@@ -104,7 +104,7 @@ protocol KWTextFieldDelegate: class {
     numberTextField.delegate = self
     numberTextField.autocorrectionType = UITextAutocorrectionType.no
     
-    NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: numberTextField)
+    NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: numberTextField)
   }
 
   // MARK: - Public Methods
@@ -125,7 +125,7 @@ protocol KWTextFieldDelegate: class {
   }
 
   // MARK: - FilePrivate Methods
-  dynamic fileprivate func textFieldDidChange(_ notification: Foundation.Notification) {
+  @objc dynamic fileprivate func textFieldDidChange(_ notification: Foundation.Notification) {
     if numberTextField.text?.count == 0 {
       numberTextField.text = " "
     }
