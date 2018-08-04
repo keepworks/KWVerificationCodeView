@@ -70,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9m-CU-XT6">
-                                <rect key="frame" x="88" y="447" width="200" height="30"/>
+                                <rect key="frame" x="88" y="417" width="200" height="30"/>
                                 <state key="normal" title="Add Programatically Example"/>
                                 <connections>
                                     <segue destination="ViW-Wf-OWW" kind="presentation" id="PCu-5s-Oao"/>
@@ -86,7 +86,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="z9m-CU-XT6" firstAttribute="top" secondItem="Skh-28-8br" secondAttribute="bottom" constant="50" id="3ER-Pd-VZR"/>
+                            <constraint firstItem="z9m-CU-XT6" firstAttribute="top" secondItem="Skh-28-8br" secondAttribute="bottom" constant="20" id="3ER-Pd-VZR"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="P6k-pN-VEP" secondAttribute="bottom" constant="22" id="H7u-LC-n82"/>
                             <constraint firstItem="ekS-Ew-GpT" firstAttribute="top" secondItem="6e0-Am-MUv" secondAttribute="bottom" constant="90" id="HQQ-Ne-ux5"/>
                             <constraint firstItem="6e0-Am-MUv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="K9Y-GQ-xFr"/>
