@@ -1,6 +1,6 @@
 # KWVerificationCodeView
 
-[![Build Status](https://www.bitrise.io/app/df05a5313a9741ef.svg?token=NNC-GCKiEh6G4w7MJ6bM5Q&branch=master)](https://www.bitrise.io/app/df05a5313a9741ef)
+[![Build Status](https://app.bitrise.io/app/df05a5313a9741ef/status.svg?token=NNC-GCKiEh6G4w7MJ6bM5Q&branch=master)](https://app.bitrise.io/app/df05a5313a9741ef)
 [![Version](https://img.shields.io/cocoapods/v/KWVerificationCodeView.svg?style=flat)](http://cocoapods.org/pods/KWVerificationCodeView)
 [![License](https://img.shields.io/cocoapods/l/KWVerificationCodeView.svg?style=flat)](http://cocoapods.org/pods/KWVerificationCodeView)
 [![Platform](https://img.shields.io/cocoapods/p/KWVerificationCodeView.svg?style=flat)](http://cocoapods.org/pods/KWVerificationCodeView)
