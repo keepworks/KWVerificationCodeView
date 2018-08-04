@@ -173,6 +173,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
 
     textFieldViews[0].activate()
+    delegate?.didChangeVerificationCode()
   }
 
   // MARK: - Private Methods
