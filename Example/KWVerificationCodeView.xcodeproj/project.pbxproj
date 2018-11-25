@@ -47,7 +47,7 @@
 		C68BD3F967305D340EA20FFD /* Pods_KWVerificationCodeView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWVerificationCodeView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AA5A4C20D0FD7B007FE474 /* ProgramaticalVerificationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramaticalVerificationCodeViewController.swift; sourceTree = "<group>"; };
 		D51BF4885572F8FECD1E4AF7 /* Pods-KWVerificationCodeView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWVerificationCodeView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWVerificationCodeView_Example/Pods-KWVerificationCodeView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E6C0C121AF93D56E0FE9F947 /* KWVerificationCodeView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KWVerificationCodeView.podspec; path = ../KWVerificationCodeView.podspec; sourceTree = "<group>"; };
+		E6C0C121AF93D56E0FE9F947 /* KWVerificationCodeView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KWVerificationCodeView.podspec; path = ../KWVerificationCodeView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F538A5E79FE77B8D323F9B7B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
