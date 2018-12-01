@@ -25,6 +25,12 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "KWVerificationCodeView"
 ```
+
+Or for xcode 9 use:
+```ruby
+pod "KWVerificationCodeView", '0.2.0'
+```
+
 ## Usage
 
 Add a `UIView` in your *Storyboard* and change the class to `KWVerificationCodeView`. You can set the properties in the *Attributes Inspector* and see a live preview:

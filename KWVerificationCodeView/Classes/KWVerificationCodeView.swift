@@ -116,7 +116,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  fileprivate var textFieldViews = [KWTextFieldView]()
+  private var textFieldViews = [KWTextFieldView]()
   private var keyboardAppearance = UIKeyboardAppearance.default
   private var textFieldFont = UIFont.systemFont(ofSize: 24.0)
   private var requiredDigits: UInt8 {
