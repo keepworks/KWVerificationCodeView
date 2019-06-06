@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-Ew-GpT" userLabel="verificationCodeView" customClass="KWVerificationCodeView" customModule="KWVerificationCodeView">
-                                <rect key="frame" x="33" y="273" width="310" height="62"/>
+                                <rect key="frame" x="32.5" y="272.5" width="310" height="62"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="SmR-e4-qbu"/>
@@ -38,7 +38,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skh-28-8br" userLabel="submitButton">
-                                <rect key="frame" x="142.5" y="357" width="90" height="40"/>
+                                <rect key="frame" x="142.5" y="356.5" width="90" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="AXu-JL-d2L"/>
@@ -61,26 +61,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWVerificationCode Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e0-Am-MUv" userLabel="titleLabel">
-                                <rect key="frame" x="16" y="159" width="343" height="24"/>
+                                <rect key="frame" x="16" y="158.5" width="343" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-pN-VEP" userLabel="promptLabel">
-                                <rect key="frame" x="149" y="233" width="77" height="18"/>
+                                <rect key="frame" x="149" y="232.5" width="77" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9m-CU-XT6">
-                                <rect key="frame" x="88" y="417" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="416.5" width="200" height="30"/>
                                 <state key="normal" title="Add Programatically Example"/>
                                 <connections>
                                     <segue destination="ViW-Wf-OWW" kind="presentation" id="PCu-5s-Oao"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-3U-0Yz">
-                                <rect key="frame" x="266" y="362" width="34" height="30"/>
+                                <rect key="frame" x="266" y="361.5" width="34" height="30"/>
                                 <state key="normal" title="clear"/>
                                 <connections>
                                     <action selector="clearButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h1q-Ts-lAH"/>
@@ -135,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO4-xT-id3" userLabel="containerView">
-                                <rect key="frame" x="67" y="302.5" width="240" height="62"/>
+                                <rect key="frame" x="67.5" y="302.5" width="240" height="62"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="ZKT-ZX-ywp"/>
@@ -147,8 +147,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7r-Cg-pzE" userLabel="dismiss">
-                                <rect key="frame" x="160.5" y="414.5" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EB9-dC-ITW" userLabel="submitButton">
+                                <rect key="frame" x="163" y="414" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="ViW-Wf-OWW" eventType="touchUpInside" id="Ub7-Ld-fDk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7r-Cg-pzE" userLabel="dismissButton">
+                                <rect key="frame" x="245" y="414.5" width="54" height="30"/>
                                 <state key="normal" title="Dismiss"/>
                                 <connections>
                                     <action selector="dismissButtonTapped:" destination="ViW-Wf-OWW" eventType="touchUpInside" id="XuZ-EC-sB8"/>
@@ -158,10 +165,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EO4-xT-id3" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="7ZN-6l-dPq"/>
-                            <constraint firstItem="a7r-Cg-pzE" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="8CX-Km-yfc"/>
                             <constraint firstItem="f6U-8u-Nd6" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="AdM-x2-67B"/>
+                            <constraint firstItem="EB9-dC-ITW" firstAttribute="centerX" secondItem="4Uy-b5-xy6" secondAttribute="centerX" id="BQm-8t-APK"/>
+                            <constraint firstItem="EB9-dC-ITW" firstAttribute="top" secondItem="EO4-xT-id3" secondAttribute="bottom" constant="49.5" id="a1j-gb-Md2"/>
                             <constraint firstItem="a7r-Cg-pzE" firstAttribute="top" secondItem="EO4-xT-id3" secondAttribute="bottom" constant="50" id="idc-nu-If0"/>
                             <constraint firstItem="EO4-xT-id3" firstAttribute="centerY" secondItem="4Uy-b5-xy6" secondAttribute="centerY" id="m5d-Xg-QG5"/>
+                            <constraint firstItem="a7r-Cg-pzE" firstAttribute="leading" secondItem="EB9-dC-ITW" secondAttribute="trailing" constant="33" id="rTs-74-MCt"/>
                             <constraint firstItem="EO4-xT-id3" firstAttribute="top" secondItem="f6U-8u-Nd6" secondAttribute="bottom" constant="50" id="uVk-oY-Aj5"/>
                         </constraints>
                     </view>

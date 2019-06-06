@@ -14,12 +14,24 @@ class ProgramaticalVerificationCodeViewController: UIViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var containerView: UIView!
 
+  // MARK: - Variables
+  var verificationCodeView: KWVerificationCodeView?
+
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
-    containerView.addSubview(verificationCodeView)
+    verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
+    containerView.addSubview(verificationCodeView!)
+  }
+
+  @IBAction func submitButtonTapped(_ sender: Any) {
+    if verificationCodeView!.hasValidCode() {
+      let alertController = UIAlertController(title: "Success", message: "Code is \(verificationCodeView!.getVerificationCode())", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+      alertController.addAction(okAction)
+      present(alertController, animated: true, completion: nil)
+    }
   }
 
   @IBAction func dismissButtonTapped(_ sender: Any) {
