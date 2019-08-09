@@ -15,7 +15,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 - iOS 8 or later
-- Swift 3.2
+- Swift 5.0
+- Xcode 10.2 or later
 
 ## Installation
 
@@ -26,10 +27,16 @@ it, simply add the following line to your Podfile:
 pod "KWVerificationCodeView"
 ```
 
-Or for xcode 9 use:
+Or for `Swift 4.2` support use
+```ruby
+pod "KWVerificationCodeView", '0.3.0'
+```
+
+Or for `Swift 4` use:
 ```ruby
 pod "KWVerificationCodeView", '0.2.0'
 ```
+
 
 ## Usage
 
