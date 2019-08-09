@@ -82,6 +82,10 @@ Returns true when the entered code is valid.
 
 	getVerificationCode() -> String
 
+Focus on First Text Field
+
+	focus()
+
 Returns the validation code.
 
 	clear()
