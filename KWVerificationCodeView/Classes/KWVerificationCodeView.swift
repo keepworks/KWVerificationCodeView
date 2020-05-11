@@ -105,6 +105,14 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
+  
+  public var textContentType: UITextContentType = UITextContentType.oneTimeCode {
+    didSet {
+      for textFieldView in textFieldViews {
+        textFieldView.numberTextField.textContentType = textContentType
+      }
+    }
+  }
 
   // MARK: - IBOutlets
   @IBOutlet var view: UIView!
