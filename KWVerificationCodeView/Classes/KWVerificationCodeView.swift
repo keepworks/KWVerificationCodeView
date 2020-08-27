@@ -105,14 +105,6 @@ public protocol KWVerificationCodeViewDelegate: class {
       }
     }
   }
-  
-  public var textContentType: UITextContentType = UITextContentType.oneTimeCode {
-    didSet {
-      for textFieldView in textFieldViews {
-        textFieldView.numberTextField.textContentType = textContentType
-      }
-    }
-  }
 
   // MARK: - IBOutlets
   @IBOutlet var view: UIView!
@@ -124,7 +116,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     }
   }
 
-  private var textFieldViews = [KWTextFieldView]()
+  fileprivate var textFieldViews = [KWTextFieldView]()
   private var keyboardAppearance = UIKeyboardAppearance.default
   private var textFieldFont = UIFont.systemFont(ofSize: 24.0)
   private var requiredDigits: UInt8 {
@@ -156,10 +148,6 @@ public protocol KWVerificationCodeViewDelegate: class {
   }
 
   // MARK: - Public Methods
-  public func focus() {
-    textFieldViews[0].numberTextField.becomeFirstResponder()
-  }
-
   public func getVerificationCode() -> String {
     var verificationCode = ""
     for textFieldView in textFieldViews {
@@ -168,7 +156,25 @@ public protocol KWVerificationCodeViewDelegate: class {
 
     return verificationCode
   }
-
+    
+    public func ClearVerificationCode(){
+        
+        for (index, textField) in textFieldViews.enumerated() {
+            textField.numberTextField.text = ""
+            if(index == 0)
+            {
+                textField.numberTextField.becomeFirstResponder()
+            }
+        }
+    }
+    
+    public func setverfiationCode(code : String)
+  {
+    for (index, char) in code.enumerated() {
+       let textfield = textFieldViews[index]
+        textfield.numberTextField.text = String(char)
+    }
+  }
   public func hasValidCode() -> Bool {
     for textFieldView in textFieldViews {
       if textFieldView.numberTextField.text!.trim() == "" {
@@ -227,7 +233,7 @@ public protocol KWVerificationCodeViewDelegate: class {
 // MARK: - KWTextFieldDelegate
 extension KWVerificationCodeView: KWTextFieldDelegate {
   func moveToNext(_ textFieldView: KWTextFieldView) {
-    let validIndex = textFieldViews.firstIndex(of: textFieldView) == textFieldViews.count - 1 ? textFieldViews.firstIndex(of: textFieldView)! : textFieldViews.firstIndex(of: textFieldView)! + 1
+    let validIndex = textFieldViews.index(of: textFieldView) == textFieldViews.count - 1 ? textFieldViews.index(of: textFieldView)! : textFieldViews.index(of: textFieldView)! + 1
     textFieldViews[validIndex].activate()
   }
 
@@ -237,7 +243,7 @@ extension KWVerificationCodeView: KWTextFieldDelegate {
     }
 
     if textFieldView.code == " " {
-      let validIndex = textFieldViews.firstIndex(of: textFieldView)! == 0 ? 0 : textFieldViews.firstIndex(of: textFieldView)! - 1
+      let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
       textFieldViews[validIndex].activate()
       textFieldViews[validIndex].reset()
     }
