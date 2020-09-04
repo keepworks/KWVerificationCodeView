@@ -155,15 +155,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     setup()
   }
 
-  // MARK: - Public Methods      
-  public func clearVerificationCode(){
-    for (index, textField) in textFieldViews.enumerated() {
-      textField.numberTextField.text = ""
-      if(index == 0) {
-        textField.numberTextField.becomeFirstResponder()
-      }
-    }
-  }
+  // MARK: - Public Methods
   
   public func setVerificationCode(_ code: String) {
     for (index, char) in code.enumerated() {
