@@ -1,5 +1,5 @@
 PODS:
-  - KWVerificationCodeView (0.3.0)
+  - KWVerificationCodeView (0.4.0)
 
 DEPENDENCIES:
   - KWVerificationCodeView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  KWVerificationCodeView: ad0d493e30d203c45f21f3d7b6a4d2b64be53252
+  KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
 
-PODFILE CHECKSUM: c5456285278196ae1d72df7acbfd1db2fab11376
+PODFILE CHECKSUM: 38a262134d099738a8adda90500ebe0dd217c58a
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.12.1

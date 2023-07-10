@@ -14,9 +14,9 @@ A customisable verification code view with built in validation. Can be used for 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-- iOS 8 or later
+- iOS 12 or later
 - Swift 5.0
-- Xcode 10.2 or later
+- Latest Xcode
 
 ## Installation
 
@@ -117,7 +117,7 @@ KeepWorks, ios@keepworks.com
 
 KWVerificationCodeView is owned and maintained by [KeepWorks](http://www.keepworks.com/).
 
-[![N|Solid](http://www.keepworks.com/assets/logo-800bbf55fabb3427537cf669dc8cd018.png)](http://www.keepworks.com/)
+[![N|Solid](logo.png)](http://www.keepworks.com/)
 
 ## Contributing
 

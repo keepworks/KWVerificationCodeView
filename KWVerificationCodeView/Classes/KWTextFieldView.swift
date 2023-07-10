@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol KWTextFieldDelegate: class {
+protocol KWTextFieldDelegate: AnyObject {
   func moveToNext(_ textFieldView: KWTextFieldView)
   func moveToPrevious(_ textFieldView: KWTextFieldView, oldCode: String)
   func didChangeCharacters()
