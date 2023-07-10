@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol KWVerificationCodeViewDelegate: class {
+public protocol KWVerificationCodeViewDelegate: AnyObject {
   func didChangeVerificationCode()
 }
 
