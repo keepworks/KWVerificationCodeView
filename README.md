@@ -117,7 +117,7 @@ KeepWorks, ios@keepworks.com
 
 KWVerificationCodeView is owned and maintained by [KeepWorks](http://www.keepworks.com/).
 
-[![N|Solid](http://www.keepworks.com/assets/logo-800bbf55fabb3427537cf669dc8cd018.png)](http://www.keepworks.com/)
+[![N|Solid](logo.png)](http://www.keepworks.com/)
 
 ## Contributing
 
