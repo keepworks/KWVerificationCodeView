@@ -89,11 +89,15 @@ Returns true when the entered code is valid.
 
 	getVerificationCode() -> String
 
-Focus on First Text Field
+Returns the validation code.
+
+	set(code: String)
+
+Set verification code programatically by passing code as a string
 
 	focus()
 
-Returns the validation code.
+Focus on First Text Field
 
 	clear()
 

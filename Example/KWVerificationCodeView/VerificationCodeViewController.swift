@@ -23,7 +23,8 @@ class VerificationCodeViewController: UIViewController {
     verificationCodeView.delegate = self
 
     /* Other available options
-    verificationCodeView.keyboardType = UIKeyboardType.emailAddress
+     verificationCodeView.keyboardType = UIKeyboardType.emailAddress
+     verificationCodeView.set("1234")
     */
   }
 
